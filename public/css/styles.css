@@ -3,4 +3,188 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* --- Color Variables --- */
+:root {
+  --color-primary: #00bcd4;
+  --color-background: #ffffff;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("/images/site/small_check.jpg");
+  color: var(--color-text);
+}
+
+.container {
+  background-color: var(--color-background);
+  max-width: 920px;
+  margin: 60px auto;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 6px solid var(--color-primary);
+}
+
+
+/*  */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.top-header .site-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.main-nav {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 10px 0;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/*  */
+.welcome {
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hero {
+  padding: 40px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .hero-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  max-width: 220px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+}
+
+.hero .hero-text img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/*  */
+.lower {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+
+.lower .reviews {
+  width: 100%;
+}
+
+.lower .reviews h2 {
+  margin-bottom: 20px;
+}
+
+
+.lower .reviews ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lower .upgrades {
+  width: 100%;
+}
+
+.lower .upgrades h2 {
+  margin-bottom: 20px;
+}
+
+.lower .upgrades .upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.lower .upgrades .upgrade-grid img {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px;
+  text-align: center;
+  border: 2px solid var(--color-black);
+}
+
+
+.main-footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+  body {
+    background-color: var(--color-white);
+  }
+
+  .container {
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .lower {
+    flex-direction: column-reverse;
+  }
+
+  .lower .upgrades .upgrade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+  }
+
 }
