@@ -31,7 +31,7 @@ ul {
     list-style: none;
 }
 
-#messages ul {
+#messages li {
     padding: 10px;
 }
 
@@ -252,6 +252,11 @@ body {
     margin-bottom: 10px;
 }
 
+.form-container span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
 .form-container label {
     margin-bottom: 8px;
     font-weight: 600;
@@ -259,7 +264,7 @@ body {
     font-size: 0.9rem;
 }
 
-.form-container input {
+.form-container input, .form-container textarea, .form-container select {
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid var(--color-primary);
@@ -313,6 +318,21 @@ body {
 
 .form-container a:hover {
     text-decoration: underline;
+}
+
+/**/
+
+.inventory-management .links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.inventory-management .links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {

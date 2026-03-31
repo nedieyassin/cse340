@@ -40,6 +40,8 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// javascript:for(var f=document.forms,i=f.length;i--;)f[i].setAttribute("novalidate",i)
+
 // Express Messages Middleware
 app.use(require("connect-flash")());
 app.use(function (req, res, next) {
