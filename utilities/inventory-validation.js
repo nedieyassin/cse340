@@ -112,19 +112,53 @@ validate.checkAddClassificationData = async (req, res, next) => {
     }
 }
 
- validate.checkAddInventoryData = async (req, res, next) => {
+validate.checkAddInventoryData = async (req, res, next) => {
     const { inv_make, inv_model, inv_year, inv_description, inv_price, inv_miles, classification_id, inv_color, inv_image, inv_thumbnail } = req.body;
     let errors = [];
     errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-       let nav = await utilities.getNav();
+        let nav = await utilities.getNav();
         const classificationSelect = await utilities.buildClassificationList(classification_id);
         res.status(400).render("inventory/add-inventory", {
             title: "Add Inventory",
             nav,
             errors,
             classificationSelect,
+            inv_make,
+            inv_model,
+            inv_year,
+            inv_description,
+            inv_price,
+            inv_miles,
+            classification_id,
+            inv_color,
+
+            inv_image,
+            inv_thumbnail,
+
+        });
+    } else {
+        next();
+    }
+}
+
+
+
+validate.checkUpdateData = async (req, res, next) => {
+    const { inv_id, inv_make, inv_model, inv_year, inv_description, inv_price, inv_miles, classification_id, inv_color, inv_image, inv_thumbnail } = req.body;
+    let errors = [];
+    errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        let nav = await utilities.getNav();
+        const classificationSelect = await utilities.buildClassificationList(classification_id);
+        res.status(400).render("inventory/edit-inventory", {
+            title: "Edit " + inv_make + " " + inv_model,
+            nav,
+            errors,
+            classificationSelect,
+            inv_id,
             inv_make,
             inv_model,
             inv_year,

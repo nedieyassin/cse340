@@ -76,6 +76,29 @@ body {
     border: 6px solid var(--color-primary);
 }
 
+
+#tools a {
+    text-decoration: underline;
+}
+
+main a {
+    text-decoration: underline;
+}
+
+
+select {
+    width: fit-content;
+    padding: 10px 40px 10px 14px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #111;
+    cursor: pointer;
+    outline: none;
+}
+
+
 /*  */
 .top-header {
     display: flex;
@@ -244,6 +267,7 @@ body {
     flex-direction: column;
     margin: 0 auto;
     max-width: 400px;
+    margin-bottom: 60px;
 }
 
 .form-container .hint {
@@ -264,8 +288,11 @@ body {
     font-size: 0.9rem;
 }
 
-.form-container input, .form-container textarea, .form-container select {
+.form-container input,
+.form-container textarea,
+.form-container select {
     padding: 12px;
+    width: 100%;
     margin-bottom: 20px;
     border: 1px solid var(--color-primary);
     border-radius: 6px;
@@ -303,6 +330,12 @@ body {
     transform: translateY(1px);
 }
 
+.form-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
 .form-container div {
     margin-top: 20px;
     text-align: center;
@@ -332,6 +365,27 @@ body {
 .inventory-management .links a {
     text-decoration: none;
     color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 8px;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
     font-weight: 600;
 }
 

@@ -18,6 +18,7 @@ const errorRoute = require("./routes/errorRoute.js");
 const session = require("express-session");
 const pool = require("./database/");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * View Engine and Templates
@@ -39,7 +40,8 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
+app.use(cookieParser());
+app.use(utilities.checkJWTToken)
 // javascript:for(var f=document.forms,i=f.length;i--;)f[i].setAttribute("novalidate",i)
 
 // Express Messages Middleware
